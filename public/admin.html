@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Item Tracker 2.1</title>
+  <link href="/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Check token on page load from URL or localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tokenFromUrl = urlParams.get('token');
+      const tokenFromStorage = localStorage.getItem('adminToken');
+
+      const token = tokenFromUrl || tokenFromStorage;
+      if (!token) {
+        window.location.href = '/login.html';
+      } else {
+        // Store token from URL if present
+        if (tokenFromUrl) {
+          localStorage.setItem('adminToken', token);
+        }
+        // No fetch needed; server handles authentication via routing
+      }
+    });
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/index.html">Item Tracker 2.1 - Developed by Vihals & Clanker Solutions</a>
+      <span class="navbar-text">Admin Dashboard</span>
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <div class="card shadow border-0 mb-2">
+      <div class="card-header bg-primary text-white p-2">
+        <h5>Add New Item</h5>
+      </div>
+      <div class="card-body p-2">
+        <form id="addItemForm">
+          <div class="row g-1 mb-2">
+            <div class="col-4">
+              <label for="itemId" class="form-label">ID</label>
+              <input type="text" class="form-control form-control-sm" id="itemId" required>
+            </div>
+            <div class="col-4">
+              <label for="itemName" class="form-label">Item Name</label>
+              <input type="text" class="form-control form-control-sm" id="itemName" required>
+            </div>
+            <div class="col-4">
+              <label for="itemDescription" class="form-label">Description</label>
+              <input type="text" class="form-control form-control-sm" id="itemDescription">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm">Add Item</button>
+        </form>
+      </div>
+    </div>
+    <div class="card shadow border-0 mb-2">
+      <div class="card-header bg-primary text-white p-2">
+        <h5>Items List</h5>
+      </div>
+      <div class="card-body p-2">
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminTable"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card shadow border-0">
+      <div class="card-header bg-primary text-white p-2">
+        <h5>Add New User & Users List</h5>
+      </div>
+      <div class="card-body p-2">
+        <form id="addUserForm" class="mb-2">
+          <div class="mb-2">
+            <label for="userName" class="form-label">User Name</label>
+            <input type="text" class="form-control form-control-sm" id="userName" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm">Add User</button>
+        </form>
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/bootstrap.bundle.min.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

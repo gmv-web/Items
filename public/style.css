@@ -1,0 +1,235 @@
+body {
+  background-color: #f1f3f5;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #1a202c !important;
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.card {
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+.card-header {
+  border-radius: 6px 6px 0 0 !important;
+  padding: 8px;
+}
+.card-body {
+  padding: 8px;
+}
+.form-control {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.9rem;
+}
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.btn-primary {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+.btn-outline-secondary {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+.custom-action-btn {
+  width: 120px !important;
+  height: 32px !important;
+  font-size: 0.8rem !important;
+  line-height: 1.2 !important;
+  padding: 0 !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+.alert {
+  border-radius: 4px;
+  margin-top: 8px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  padding: 8px 12px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+.d-none {
+  display: none;
+}
+.action-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 120px;
+  white-space: nowrap;
+}
+.table {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-collapse: separate;
+  border-spacing: 0 2px;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+.table th {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1a202c;
+  background-color: #e9ecef;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 6px 10px;
+  border-bottom: 2px solid #dee2e6;
+  text-align: left;
+}
+.table td {
+  vertical-align: middle;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #999999;
+  min-height: 40px;
+}
+.table tr {
+  border-bottom: 2px solid #999999;
+  min-height: 40px;
+}
+.table .item-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.table .status-badge {
+  font-size: 0.8rem;
+  padding: 4px 6px;
+  border-radius: 10px;
+}
+.table .status-available {
+  background-color: #d4edda;
+  color: #155724;
+}
+.table .status-assigned {
+  background-color: #ffe5cc;
+  color: #663c00;
+}
+.table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+.table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+.table-hover tbody tr:hover {
+  background-color: #e2e6ea;
+}
+.table .highlight {
+  background-color: #fff3cd;
+  padding: 0 2px;
+}
+.table-responsive {
+  border-radius: 6px;
+  overflow-x: auto;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+.modal-content {
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.assign-modal-select {
+  margin-top: 8px;
+}
+.sticky-top {
+  top: 1rem;
+  z-index: 1000;
+}
+.pagination {
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.pagination .page-link {
+  border-radius: 4px;
+  margin: 0 3px;
+  font-size: 0.85rem;
+}
+@media (max-width: 576px) {
+  .action-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: auto;
+  }
+  .custom-action-btn {
+    width: 100% !important;
+    height: 32px !important;
+    font-size: 0.8rem !important;
+  }
+  .table th, .table td {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+  .table tr {
+    border-bottom: 2px solid #999999;
+  }
+  .table {
+    border-spacing: 0 1px;
+  }
+  .table .item-name {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+  }
+  .table th {
+    padding: 6px 10px;
+  }
+  .table td {
+    padding: 6px 10px;
+  }
+  .form-control {
+    font-size: 1rem;
+  }
+  .btn-primary, .btn-outline-secondary {
+    font-size: 0.9rem;
+  }
+  .custom-action-btn {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Additional styling for admin dashboard compactness */
+.admin-form-row {
+  margin-bottom: 4px; /* Reduced spacing between form rows */
+}
+.admin-form-row .form-label {
+  font-size: 0.8rem; /* Match input size for compactness */
+}
